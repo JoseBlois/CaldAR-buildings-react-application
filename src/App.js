@@ -3,6 +3,7 @@ import buildings from './mocks/buildings.json';
 import Header from './components/Header'
 import Buildings from './components/Buildings';
 import AddBuilding from './components/AddBuilding';
+import EditBuilding from './components/EditBuilding';
 import './App.css';
 
 class App extends Component {
@@ -21,11 +22,24 @@ class App extends Component {
     })
   }
 
+  updateBuilding = (updatedBuilding) => {
+    console.log(updatedBuilding);
+    const updatedBuildings = this.state.buildings;
+    const index = updatedBuildings.findIndex(oldBuilding => oldBuilding.id === updatedBuilding.id );
+    updatedBuildings[index] = updatedBuilding;
+    this.setState({
+      buildings: updatedBuildings
+    });
+  }
+
+  searchBuilding = (id) => this.state.buildings.find(building => parseInt(building.id) === parseInt(id));
+
   render() {
     return (
       <div className="container">
         <Header/>
         <AddBuilding addBuilding={this.addBuilding}/>
+        <EditBuilding max={this.state.buildings.length} searchBuilding={this.searchBuilding} updateBuilding={this.updateBuilding}  />
         <Buildings deleteBuilding={this.deleteBuilding} buildings={this.state.buildings}/>
       </div>
     )

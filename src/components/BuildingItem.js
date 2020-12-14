@@ -34,7 +34,6 @@ class BuildingItem extends Component {
           <div style={celStyle}>[{this.props.building.boilers.join('-')}]</div>
           <div style={celStyle}>{this.props.building.company}</div>
           <div style={celStyle}>{this.props.building.id}</div>
-          <button>Edit</button>
           <button style={deleteBtnStyle} onClick={this.props.deleteBuilding.bind(this, this.props.building.id)} >X</button>
         </div>
     )

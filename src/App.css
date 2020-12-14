@@ -6,7 +6,19 @@
 body {
   background-color: #f4f4f4;
 }
+header {
+  text-align: center;
+}
 .container {
   width: 90%;
   margin: auto;
+}
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-form .form-group {
+  margin-bottom: 15px;
 }

@@ -1,5 +1,11 @@
 import React , { Component } from 'react';
 
+const containerStyle = {
+  margin: '20px auto',
+  backgroundColor: '#ff5800',
+  textAlign: 'center',
+};
+
 class AddBuilding extends Component {
 
   state = {
@@ -36,33 +42,36 @@ class AddBuilding extends Component {
 
   render(){
     return (
-      <form onSubmit={this.submition}>
-        <div className="form-group">
-          <label for="name" >Building's Name</label>
-          <input value={this.state.name} onChange={this.changeValue} name="name" id="name" type="text" required />
-        </div>
-        <div className="form-group">
-          <label for="address" >Building's Address</label>
-          <input value={this.state.address} onChange={this.changeValue} name="address" id="address" type="text" required />
-        </div>
-        <div className="form-group">
-          <label for="company" >Building's Company</label>
-          <input value={this.state.company} onChange={this.changeValue} name="company" id="company"  type="text" required />
-        </div>
-        <div className="form-group">
-          <label for="boiler1" >Building's Boiler 1</label>
-          <input value={this.state.boiler1} onChange={this.changeValue} name="boiler1" id="boiler1" type="text" required />
-        </div>
-        <div className="form-group">
-          <label for="boiler2" >Building's Boiler 2</label>
-          <input value={this.state.boiler2} onChange={this.changeValue} name="boiler2" id="boiler2" type="text" />
-        </div>
-        <div className="form-group">
-          <label for="boiler3" >Building's Boiler 3</label>
-          <input value={this.state.boiler3} onChange={this.changeValue} name="boiler3" id="boiler3" type="text" />
-        </div>
-          <input type="submit" value="Submit" />
-      </form>
+      <div style={containerStyle}>
+        <h2>Add building panel</h2>
+        <form className="add-form" onSubmit={this.submition}>
+          <div className="form-group">
+            <label for="name" >Building Name</label>
+            <input value={this.state.name} onChange={this.changeValue} name="name"pe="text" required />
+          </div>
+          <div className="form-group">
+            <label for="address" >Building Address</label>
+            <input value={this.state.address} onChange={this.changeValue} name="address" type="text" required />
+          </div>
+          <div className="form-group">
+            <label for="company" >Building Company</label>
+            <input value={this.state.company} onChange={this.changeValue} name="company"  type="text" required />
+          </div>
+          <div className="form-group">
+            <label for="boiler1" >Building Boiler 1</label>
+            <input value={this.state.boiler1} onChange={this.changeValue} name="boiler1" type="text" required />
+          </div>
+          <div className="form-group">
+            <label for="boiler2" >Building Boiler 2</label>
+            <input value={this.state.boiler2} onChange={this.changeValue} name="boiler2" type="text" />
+          </div>
+          <div className="form-group">
+            <label for="boiler3" >Building Boiler 3</label>
+            <input value={this.state.boiler3} onChange={this.changeValue} name="boiler3" type="text" />
+          </div>
+            <input type="submit" value="Submit" />
+        </form>
+      </div>
     )
   }
 }
