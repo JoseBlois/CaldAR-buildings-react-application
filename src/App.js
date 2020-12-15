@@ -7,7 +7,10 @@ import EditBuilding from './components/EditBuilding';
 import './App.css';
 
 class App extends Component {
-  state = {buildings}
+  state = {
+    buildings,
+    max : 20,
+  }
 
   deleteBuilding = (id) => {
     this.setState({
@@ -18,7 +21,8 @@ class App extends Component {
   addBuilding = (building) => {
     building.id = this.state.buildings[this.state.buildings.length - 1].id + 1;
     this.setState({
-      buildings: [...this.state.buildings, building]
+      buildings: [...this.state.buildings, building],
+      max: this.state.max + 1
     })
   }
 
@@ -39,7 +43,7 @@ class App extends Component {
       <div className="container">
         <Header/>
         <AddBuilding addBuilding={this.addBuilding}/>
-        <EditBuilding max={this.state.buildings.length} searchBuilding={this.searchBuilding} updateBuilding={this.updateBuilding}  />
+        <EditBuilding max={this.state.max} searchBuilding={this.searchBuilding} updateBuilding={this.updateBuilding}  />
         <Buildings deleteBuilding={this.deleteBuilding} buildings={this.state.buildings}/>
       </div>
     )

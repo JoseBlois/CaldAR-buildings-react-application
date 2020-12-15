@@ -5,6 +5,7 @@
 }
 body {
   background-color: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
   text-align: center;
@@ -13,12 +14,17 @@ header {
   width: 90%;
   margin: auto;
 }
+.add-form-container{
+  margin: '20px auto';
+  background-color: #ff5800;
+  text-align: 'center';
+}
 .add-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-.add-form .form-group {
+.add-form .form-group, .edit-form .form-group {
   margin-bottom: 15px;
 }

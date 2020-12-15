@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../css/EditBuilding.css'
 
 class EditBuilding extends Component {
 
@@ -54,38 +55,38 @@ class EditBuilding extends Component {
     return (
       <div>
         <h2>Update building panel</h2>
-        <form className="add-form" onSubmit={this.submitUpdate}>
+        <form className="edit-form" onSubmit={this.submitUpdate}>
           <div className="chosing-container">
             <label>Id:</label>
             <input type="number" min="1" max={this.props.max} onChange={this.getBuilding}/>
           </div>
           <div className="inputs-container">
             <div className="form-group">
-              <label for="name" >Building Name</label>
+              <label for="name" >Building Name:</label>
               <input value={this.state.name || ''} name="edit-name" id="name" type="text" required onChange={this.changeValue} />
             </div>
             <div className="form-group">
-              <label for="address" >Building Address</label>
+              <label for="address" >Building Address:</label>
               <input value={this.state.address || ''} name="edit-address" id="address" type="text" required onChange={this.changeValue} />
             </div>
             <div className="form-group">
-              <label for="company" >Building Company</label>
+              <label for="company" >Building Company:</label>
               <input value={this.state.company || ''} name="edit-company" id="company"  type="text" onChange={this.changeValue} />
             </div>
             <div className="form-group">
-              <label for="boiler1" >Building Boiler 1</label>
+              <label for="boiler1" >Building Boiler 1:</label>
               <input value={this.state.boiler1 || ''}  name="edit-boiler1" id="boiler1" type="text" required onChange={this.changeValue} />
             </div>
             <div className="form-group">
-              <label for="boiler2" >Building Boiler 2</label>
+              <label for="boiler2" >Building Boiler 2:</label>
               <input value={this.state.boiler2 || ''} name="edit-boiler2" id="boiler2" type="text" onChange={this.changeValue} />
             </div>
             <div className="form-group">
-              <label for="boiler3" >Building Boiler 3</label>
+              <label for="boiler3" >Building Boiler 3:</label>
               <input value={this.state.boiler3 || ''} name="edit-boiler3" id="boiler3" type="text" onChange={this.changeValue} />
             </div>
           </div>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Update" />
         </form>
       </div>
     )

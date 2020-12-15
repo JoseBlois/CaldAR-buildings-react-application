@@ -1,11 +1,5 @@
 import React , { Component } from 'react';
 
-const containerStyle = {
-  margin: '20px auto',
-  backgroundColor: '#ff5800',
-  textAlign: 'center',
-};
-
 class AddBuilding extends Component {
 
   state = {
@@ -42,7 +36,7 @@ class AddBuilding extends Component {
 
   render(){
     return (
-      <div style={containerStyle}>
+      <div className="add-form-container">
         <h2>Add building panel</h2>
         <form className="add-form" onSubmit={this.submition}>
           <div className="form-group">
